@@ -3,6 +3,7 @@ package com.example.dedosrapidos_pruebadeescriturarpida;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
@@ -65,6 +66,12 @@ public class Resultados extends AppCompatActivity
 
         Toast.makeText(this, "Se ha registrado correctamente", Toast.LENGTH_SHORT).show();
 
+    }
 
+    //Llevar a inicio
+    public void inicio(View view)
+    {
+        Intent anterior = new Intent(this, MainActivity.class);
+        startActivity(anterior);
     }
 }
