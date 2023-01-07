@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">DedosRapidos - Prueba de escritura rápida</string>
+    <string name="campoTexto"> </string>
+    <string name="btnLetras">Test por letras</string>
+    <string name="btnPalabras">Test por palabras</string>
+    <string name="btnNumero">Test por numeros</string>
+    <string name="correctas">Correctas</string>
+    <string name="Incorrectas">Incorrectas</string>
+    <string name="Presicion">Presición</string>
+    <string name="CPM">CPM</string>
+    <string name="WPM">WPM</string>
+    <string name="EscribeLaLetra">Empieza a escribir aqui</string>
+    <string name="cero">0</string>
+    <string name="espacio">- </string>
+    <string name="Historial">Historial resultados</string>
+    <string name="guardarMarca">Guardar marca</string>
+
+</resources>
