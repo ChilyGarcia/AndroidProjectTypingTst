@@ -1,4 +1,4 @@
-package com.example.dedosrapidos_pruebadeescriturarpida;
+package com.example.dedosrapidos_pruebadeescriturarpida.db;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -8,13 +8,13 @@ import androidx.annotation.Nullable;
 
 public class AdminSQLiteOpenHelper extends SQLiteOpenHelper
 {
-    public AdminSQLiteOpenHelper(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
-        super(context, name, factory, version);
+    public AdminSQLiteOpenHelper(@Nullable Context context) {
+        super(context, "resultados.db", null, 1);
     }
 
     @Override
     public void onCreate(SQLiteDatabase baseDatos) {
-        baseDatos.execSQL("CREATE TABLE Resultados(codigo int primary key, correctas varchar, incorrectas varchar, presicion real, cpmwpm  varchar)");
+        baseDatos.execSQL("CREATE TABLE Resultados(id INTEGER PRIMARY KEY AUTOINCREMENT, correctas TEXT, incorrectas TEXT, presicion TEXT, cpmwpm TEXT)");
 
     }
 

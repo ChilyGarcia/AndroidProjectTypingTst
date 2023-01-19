@@ -15,6 +15,7 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,6 +26,11 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView tv;
     private EditText et;
+
+    Button btnHistorial;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,11 +51,11 @@ public class MainActivity extends AppCompatActivity {
         Intent palabras = new Intent(this, PorPalabras.class);
         startActivity(palabras);
     }
-    public void historialResultaddos(View view)
-    {
-        Intent resultados = new Intent(this, HistorialResultados.class);
-        startActivity(resultados);
-    }
 
+    public void historial(View view)
+    {
+        Intent historial = new Intent(this, HistorialResultados.class);
+        startActivity(historial);
+    }
 
 }

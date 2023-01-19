@@ -1,55 +1,55 @@
 package com.example.dedosrapidos_pruebadeescriturarpida;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ListView;
-import android.widget.Toast;
+
+import com.example.dedosrapidos_pruebadeescriturarpida.db.dbResultados;
+import com.example.dedosrapidos_pruebadeescriturarpida.entidad.ResultadosPruebas;
 
 import java.util.ArrayList;
-import java.util.List;
 
-public class HistorialResultados extends AppCompatActivity
-{
+public class HistorialResultados extends AppCompatActivity {
 
-    ListView listViewContacto;
-    List<ResultadosPruebas> lst;
+    RecyclerView listaResultados;
+    ArrayList<ResultadosPruebas> listaArrayResultadosPruebas;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_historial_resultados);
 
-        listViewContacto = findViewById(R.id.listViewContacto);
+        listaResultados = findViewById(R.id.listaContactos);
+        listaResultados.setLayoutManager(new LinearLayoutManager(this));
 
-        CustomAdapter adapter = new CustomAdapter(this, getData());
-        listViewContacto.setAdapter(adapter);
+        dbResultados dbResultados = new dbResultados(HistorialResultados.this);
 
-        //Accion de eleccion de listView
-        listViewContacto.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                ResultadosPruebas r = lst.get(i);
-                Toast.makeText(getBaseContext(), r.nombre, Toast.LENGTH_SHORT).show();
-            }
-        });
+        listaArrayResultadosPruebas = new ArrayList<>();
+
+        ListaContactosAdapter adapter = new ListaContactosAdapter(dbResultados.mostrarContactos());
+        listaResultados.setAdapter(adapter);
 
 
 
-    }
 
-    private List<ResultadosPruebas> getData()
-    {
-        lst = new ArrayList<>();
+        /*
 
-        lst.add(new ResultadosPruebas(1, R.drawable.compartir, "Juan", "321323123"));
-        lst.add(new ResultadosPruebas(2, R.drawable.compartir, "Esteban", "321323123"));
-        lst.add(new ResultadosPruebas(3, R.drawable.compartir, "Lamara", "321323123"));
+        listaResultados = findViewById(R.id.listaContactos);
+        listaResultados.setLayoutManager(new LinearLayoutManager(this));
 
-        return lst;
+        Resultados db = new Resultados();
+
+        listaArrayResultadosPruebas = new ArrayList<>();
+
+        ListaContactosAdapter adapter = new ListaContactosAdapter(db.listaResultadosPruebas());
+        //Enviar la informacion estruturada para que lo pueda procesar correctamente el listView
+        listaResultados.setAdapter(adapter);
+
+
+         */
+
 
     }
 }
