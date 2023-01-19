@@ -28,8 +28,11 @@ public class HistorialResultados extends AppCompatActivity {
 
         listaArrayResultadosPruebas = new ArrayList<>();
 
+
+        //Se le envia al adaptador
         ListaContactosAdapter adapter = new ListaContactosAdapter(dbResultados.mostrarContactos());
         listaResultados.setAdapter(adapter);
+
 
 
 
