@@ -1,11 +1,10 @@
-package com.example.dedosrapidos_pruebadeescriturarpida.adaptadores;
+package com.example.dedosrapidos_pruebadeescriturarpida.entidad;
+
 
 import android.content.Intent;
-import android.sax.ElementListener;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -13,45 +12,57 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.dedosrapidos_pruebadeescriturarpida.MainActivity;
 import com.example.dedosrapidos_pruebadeescriturarpida.R;
-import com.example.dedosrapidos_pruebadeescriturarpida.entidad.ResultadosPruebas;
 
 import java.util.ArrayList;
 
+
 public class ListaContactosAdapter extends RecyclerView.Adapter<ListaContactosAdapter.ContactoViewHolder> implements View.OnClickListener{
 
-    ArrayList<ResultadosPruebas> listaResultados;
+    ArrayList<ResultadosPruebas> listaContactos;
     private View.OnClickListener listener;
 
 
-    public ListaContactosAdapter(ArrayList<ResultadosPruebas> listaResultados)
-    {
-        this.listaResultados = listaResultados;
+
+    public ListaContactosAdapter(ArrayList<ResultadosPruebas> listaContactos) {
+        this.listaContactos = listaContactos;
+
     }
 
     @NonNull
     @Override
     public ContactoViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.listview_resultados, null, false);
+        //Poner a la escucha el click listener
         view.setOnClickListener(this);
         return new ContactoViewHolder(view);
+
+
+
     }
 
     @Override
     public void onBindViewHolder(@NonNull ContactoViewHolder holder, int position) {
+        holder.tvCorrectas.setText(listaContactos.get(position).getCorrectos());
+        holder.tvIncorrectas.setText(listaContactos.get(position).getIncorrectos());
 
+        //Se pone el evento para cada item de el recyclerView
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(holder.itemView.getContext(), MainActivity.class);
+                holder.itemView.getContext().startActivity(intent);
 
-        holder.tvCorrectos.setText(listaResultados.get(position).getCorrectos());
-        holder.tvIncorrectos.setText(listaResultados.get(position).getIncorrectos());
-
-
+            }
+        });
 
     }
+
 
     @Override
     public int getItemCount() {
-        return listaResultados.size();
+        return listaContactos.size();
     }
+
 
     public void setOnClickListener(View.OnClickListener listener)
     {
@@ -62,7 +73,7 @@ public class ListaContactosAdapter extends RecyclerView.Adapter<ListaContactosAd
     @Override
     public void onClick(View view) {
 
-        if(listener!=null)
+        if(listener != null)
         {
             listener.onClick(view);
         }
@@ -71,15 +82,13 @@ public class ListaContactosAdapter extends RecyclerView.Adapter<ListaContactosAd
 
     public class ContactoViewHolder extends RecyclerView.ViewHolder {
 
-        TextView tvCorrectos, tvIncorrectos;
-
-
+        TextView tvCorrectas, tvIncorrectas;
 
         public ContactoViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            tvCorrectos = itemView.findViewById(R.id.tvCorrectas);
-            tvIncorrectos = itemView.findViewById(R.id.tvIncorrectas);
+            tvCorrectas = itemView.findViewById(R.id.tvCorrectas);
+            tvIncorrectas = itemView.findViewById(R.id.tvIncorrectas);
 
 
 
