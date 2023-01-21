@@ -50,6 +50,7 @@ public class Resultados extends AppCompatActivity
                 dbResultados db = new dbResultados(Resultados.this);
                 db.Registrar(correctos, incorrectos, presicion, wpmcpm);
 
+                activivtyHistorial();
 
             }
         });
@@ -66,18 +67,22 @@ public class Resultados extends AppCompatActivity
         tvPresicion.setText(presicion);
         tvWPMCPM.setText(cpm);
 
-
-
-        
-
     }
-
 
     //Llevar a inicio
     public void inicio(View view)
     {
         Intent anterior = new Intent(this, MainActivity.class);
         startActivity(anterior);
+    }
+
+    //Llevar a la activity de historial de resultados una vez la marca ha sido guuardada
+    public void activivtyHistorial()
+    {
+        Intent historial = new Intent(this, HistorialResultados.class);
+        startActivity(historial);
+
+
     }
 
 /*

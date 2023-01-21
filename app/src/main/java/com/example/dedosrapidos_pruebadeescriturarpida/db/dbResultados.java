@@ -41,7 +41,6 @@ public class dbResultados extends AdminSQLiteOpenHelper{
             baseDatos.insert("Resultados", null, registro);
             baseDatos.close();
 
-
         }
     }
 

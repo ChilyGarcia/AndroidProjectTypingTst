@@ -15,5 +15,6 @@
     <string name="Historial">Historial resultados</string>
     <string name="guardarMarca">Guardar marca</string>
     <string name="Inicio">Inicio</string>
+    <string name="cronometro">01:00</string>
 
 </resources>

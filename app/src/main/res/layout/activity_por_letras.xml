@@ -123,11 +123,11 @@
 
     <TextView
         android:id="@+id/tvInfoContador"
-        android:layout_width="143dp"
-        android:layout_height="52dp"
+        android:layout_width="124dp"
+        android:layout_height="49dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="108dp"
-        android:text="TextView"
+        android:layout_marginEnd="132dp"
+        android:text="@string/cronometro"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

@@ -5,6 +5,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Toast;
 
 import com.example.dedosrapidos_pruebadeescriturarpida.db.dbResultados;
 import com.example.dedosrapidos_pruebadeescriturarpida.entidad.ResultadosPruebas;
@@ -31,8 +33,10 @@ public class HistorialResultados extends AppCompatActivity {
 
         //Se le envia al adaptador
         ListaContactosAdapter adapter = new ListaContactosAdapter(dbResultados.mostrarContactos());
-        listaResultados.setAdapter(adapter);
 
+
+
+        listaResultados.setAdapter(adapter);
 
 
     }

@@ -30,12 +30,12 @@
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="160dp"
-        android:layout_marginTop="84dp"
+        android:layout_width="230dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="40dp"
         android:onClick="historial"
-        android:text="Button"
+        android:text="@string/Historial"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnPalabras" />
 
