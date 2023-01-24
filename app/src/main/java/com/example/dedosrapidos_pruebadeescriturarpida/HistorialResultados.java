@@ -35,17 +35,6 @@ public class HistorialResultados extends AppCompatActivity {
         //Se le envia al adaptador
         ListaContactosAdapter adapter = new ListaContactosAdapter(dbResultados.mostrarContactos());
 
-        adapter.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(getApplicationContext(), "Selección: " , Toast.LENGTH_SHORT).show();
-            }
-        });
-
-
-
-
-
         listaResultados.setAdapter(adapter);
 
 

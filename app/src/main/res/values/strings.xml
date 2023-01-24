@@ -6,7 +6,7 @@
     <string name="btnNumero">Test por numeros</string>
     <string name="correctas">Correctas</string>
     <string name="Incorrectas">Incorrectas</string>
-    <string name="Presicion">Presición</string>
+    <string name="Precision">Precision</string>
     <string name="CPM">CPM</string>
     <string name="WPM">WPM</string>
     <string name="EscribeLaLetra">Empieza a escribir aqui</string>

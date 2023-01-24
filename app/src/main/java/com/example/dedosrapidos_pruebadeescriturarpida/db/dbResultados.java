@@ -72,6 +72,4 @@ public class dbResultados extends AdminSQLiteOpenHelper{
 
         return listaContactos;
     }
-
-
 }
