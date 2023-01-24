@@ -12,6 +12,7 @@
         android:layout_height="51dp"
         android:layout_marginStart="184dp"
         android:layout_marginTop="272dp"
+        android:fontFamily="@font/allerta"
         android:text="T "
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"

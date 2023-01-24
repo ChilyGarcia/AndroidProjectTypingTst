@@ -2,12 +2,17 @@ package com.example.dedosrapidos_pruebadeescriturarpida;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class ResultadosDetalles extends AppCompatActivity {
 
     TextView tvDetallesCorrectas, tvDetallesIncorrectas, tvDetallesPrecision, tvDetalleWpm;
+    Button btnHome;
+
 
 
     @Override
@@ -20,6 +25,16 @@ public class ResultadosDetalles extends AppCompatActivity {
         tvDetallesPrecision = (TextView) findViewById(R.id.tvDetallesPrecision);
         tvDetalleWpm = (TextView) findViewById(R.id.tvDetalleWpm);
 
+        btnHome = findViewById(R.id.btnHome);
+
+
+        btnHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Home();
+            }
+        });
+
 
         String correctas = getIntent().getStringExtra("correctas");
         String incorrectas = getIntent().getStringExtra("incorrectas");
@@ -30,6 +45,13 @@ public class ResultadosDetalles extends AppCompatActivity {
         tvDetallesIncorrectas.setText(incorrectas);
         tvDetallesPrecision.setText(precision);
         tvDetalleWpm.setText(wpm);
+
+    }
+
+    public void Home()
+    {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
 
     }
 }

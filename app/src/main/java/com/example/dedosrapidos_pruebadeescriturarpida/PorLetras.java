@@ -23,14 +23,14 @@ public class PorLetras extends AppCompatActivity {
     private boolean mTimerRunning;
     private long mTimeLeftInMillis = START_TIME_IN_MILLIS;
 
-
     private TextView tv, tvCorrectos, tvIncorrectos, tvPresicion, tvCPM, tvInfo;
     private EditText et;
-
 
     private int correctos = 0;
     private int incorrectos = 0;
     private int contador = 0;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,8 +44,8 @@ public class PorLetras extends AppCompatActivity {
         tvCPM = (TextView) findViewById(R.id.wpm);
         tvInfo = (TextView) findViewById(R.id.tvInfoContador);
 
-
-
+        //Cuando inicia la prueba la primera letra que sale es random
+        alimentar();
 
         et = (EditText) findViewById(R.id.textCampo);
 
@@ -63,9 +63,6 @@ public class PorLetras extends AppCompatActivity {
                 String capture = tv.getText().toString();
                 String campo = et.getText().toString();
                 String palabra = et.getText().toString();
-
-
-
 
                 //Condocionales para cambiar el color de el textView si el usuario esta digitando bien o mal
                 if(campo.isEmpty())
@@ -95,21 +92,12 @@ public class PorLetras extends AppCompatActivity {
                     if (Character.isSpace(et.getText().toString().charAt(in))) {
                         contador++;
 
-                        //String contadorParse = String.valueOf(contador);
-                        //tvPresicion.setText(contadorParse);
-
-
                         //Se valida que lo que esté dentro del editText corresponda a lo que esta en el textView
                         if(campo.equals(capture))
                         {
                             Toast.makeText(PorLetras.this, "Es correcto", Toast.LENGTH_SHORT).show();
                             correctos++;
-                            /*
-                            int contadorDividido = contador/100;
-                            int porcentaje = correctos / contadorDividido;
-                            String porcentajeParse = String.valueOf(porcentaje);
-                            tvPresicion.setText(porcentajeParse);
-                            */
+
                             String correctosParse = String.valueOf(correctos);
                             tvCorrectos.setText(correctosParse);
                             tv.setTextSize(24);
@@ -163,20 +151,15 @@ public class PorLetras extends AppCompatActivity {
                 updateCountDownText();
 
             }
-
             @Override
             public void onFinish() {
                 mTimerRunning = false;
                 resultados();
 
-
-
             }
         }.start();
 
         mTimerRunning = true;
-
-
     }
     private void updateCountDownText()
     {
@@ -190,6 +173,7 @@ public class PorLetras extends AppCompatActivity {
 
     //Metodo para alimentar el textView con las palabras que esten almacenadas en el Vector
     public void alimentar() {
+
         String lista[] = {"a ", "b ", "c ", "d ", "e ", "f ", "g ", "h ", "i ", "j ", "k ", "l ", "m ", "n ", "o ", "p ", "q ", "r ", "s ", "t ", "u ",
                 "v ", "w ", "x ", "y ", "z ", "A ", "B ", "C ", "D ", "E ", "F ", "G ", "H ", "I ", "J ", "K ", "L ", "M ", "N ", "O ", "P ", "Q ", "R ", "S ",
                 "T ", "U ", "V ", "W ", "X ", "Y ", "Z "};
@@ -198,7 +182,6 @@ public class PorLetras extends AppCompatActivity {
         tv.setText(finalLetra);
 
     }
-
     public void resultados()
     {
         Intent resultados = new Intent(this, Resultados.class);

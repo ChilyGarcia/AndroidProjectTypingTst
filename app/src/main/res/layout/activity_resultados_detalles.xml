@@ -86,4 +86,14 @@
         app:layout_constraintStart_toEndOf="@+id/detalleWpmCpm"
         app:layout_constraintTop_toBottomOf="@+id/tvDetallesPrecision" />
 
+    <Button
+        android:id="@+id/btnHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="156dp"
+        android:layout_marginTop="508dp"
+        android:text="@string/Inicio"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
