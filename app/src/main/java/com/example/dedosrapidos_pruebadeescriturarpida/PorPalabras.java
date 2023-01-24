@@ -2,6 +2,7 @@ package com.example.dedosrapidos_pruebadeescriturarpida;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.text.Editable;
@@ -125,8 +126,7 @@ public class PorPalabras extends AppCompatActivity {
             @Override
             public void onFinish() {
                 mTimerRunning = false;
-
-
+                Resultados();
 
             }
         }.start();
@@ -153,6 +153,19 @@ public class PorPalabras extends AppCompatActivity {
         int numero = (int) (Math.random() * 32);
         String finalLetra = lista[numero];
         tv.setText(finalLetra);
+
+    }
+
+    public void Resultados()
+    {
+        Intent intent = new Intent(this, Resultados.class);
+
+        intent.putExtra("correctos", tvPalabrasCorrectas.getText().toString());
+        intent.putExtra("incorrectos", tvPalabrasIncorrectas.getText().toString());
+        intent.putExtra("presicion", tvPresicion.getText().toString());
+        intent.putExtra("wpmcpm", tvWPM.getText().toString());
+
+        startActivity(intent);
 
     }
 }
