@@ -42,6 +42,8 @@ public class PorPalabras extends AppCompatActivity {
 
         et = (EditText) findViewById(R.id.campoPalabraEsccribir);
 
+        alimentar();
+
         et.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
