@@ -22,12 +22,14 @@ import java.util.ArrayList;
 public class ListaContactosAdapter extends RecyclerView.Adapter<ListaContactosAdapter.ContactoViewHolder> implements View.OnClickListener{
 
     ArrayList<ResultadosPruebas> listaResultados;
+    String tipoPrueba;
     private View.OnClickListener listener;
 
 
-    public ListaContactosAdapter(ArrayList<ResultadosPruebas> listaResultados)
+    public ListaContactosAdapter(ArrayList<ResultadosPruebas> listaResultados, String tipoPrueba)
     {
         this.listaResultados = listaResultados;
+        this.tipoPrueba = tipoPrueba;
     }
 
     @NonNull
@@ -42,14 +44,15 @@ public class ListaContactosAdapter extends RecyclerView.Adapter<ListaContactosAd
     @Override
     public void onBindViewHolder(@NonNull ContactoViewHolder holder, int position) {
 
-        holder.tvCorrectos.setText(listaResultados.get(position).getCorrectos());
+        holder.tvCorrectos.setText(listaResultados.get(position).getWpmcpm());
         holder.tvIncorrectos.setText(listaResultados.get(position).getIncorrectos());
+        holder.tvPrueba.setText(listaResultados.get(position).getTipoPrueba());
 
         String correctas = holder.tvCorrectos.getText().toString();
         String incorrectas = holder.tvIncorrectos.getText().toString();
         String precision = listaResultados.get(position).getPrecision();
         String wpmcmp = listaResultados.get(position).getWpmcpm();
-
+        String tipoPrueba = listaResultados.get(position).getTipoPrueba();
 
 
 
@@ -62,6 +65,7 @@ public class ListaContactosAdapter extends RecyclerView.Adapter<ListaContactosAd
                 intent.putExtra("incorrectas", incorrectas);
                 intent.putExtra("precision", precision);
                 intent.putExtra("wpmcpm", wpmcmp);
+                intent.putExtra("tipoPrueba", tipoPrueba);
 
 
                 holder.itemView.getContext().startActivity(intent);
@@ -96,7 +100,7 @@ public class ListaContactosAdapter extends RecyclerView.Adapter<ListaContactosAd
 
     public class ContactoViewHolder extends RecyclerView.ViewHolder {
 
-        TextView tvCorrectos, tvIncorrectos;
+        TextView tvCorrectos, tvIncorrectos, tvPrueba;
 
 
         public ContactoViewHolder(@NonNull View itemView) {
@@ -104,6 +108,7 @@ public class ListaContactosAdapter extends RecyclerView.Adapter<ListaContactosAd
 
             tvCorrectos = itemView.findViewById(R.id.tvCorrectas);
             tvIncorrectos = itemView.findViewById(R.id.tvIncorrectas);
+            tvPrueba = itemView.findViewById(R.id.tvPrueba);
 
 
         }

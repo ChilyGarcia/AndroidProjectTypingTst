@@ -22,14 +22,14 @@ public class dbResultados extends AdminSQLiteOpenHelper{
     }
 
 
-    public void Registrar(String correctos, String incorrectos, String presicion, String wpmcpm)
+    public void Registrar(String correctos, String incorrectos, String presicion, String wpmcpm, String tipoPrueba)
     {
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(context);
         //Abrir base de datos para lectura y escritura
         SQLiteDatabase baseDatos = admin.getWritableDatabase();
 
 
-        if(!correctos.isEmpty() && !incorrectos.isEmpty() && !presicion.isEmpty() && !wpmcpm.isEmpty())
+        if(!correctos.isEmpty() && !incorrectos.isEmpty() && !presicion.isEmpty() && !wpmcpm.isEmpty() && !tipoPrueba.isEmpty())
         {
             ContentValues registro = new ContentValues();
 
@@ -37,6 +37,7 @@ public class dbResultados extends AdminSQLiteOpenHelper{
             registro.put("incorrectas", incorrectos);
             registro.put("presicion", presicion);
             registro.put("cpmwpm", wpmcpm);
+            registro.put("tipoPrueba", tipoPrueba);
 
             baseDatos.insert("Resultados", null, registro);
             baseDatos.close();
@@ -63,6 +64,7 @@ public class dbResultados extends AdminSQLiteOpenHelper{
                 contacto.setIncorrectos(cursorContactos.getString(2));
                 contacto.setPrecision(cursorContactos.getString(3));
                 contacto.setWpmcpm(cursorContactos.getString(4));
+                contacto.setTipoPrueba(cursorContactos.getString(5));
 
                 listaContactos.add(contacto);
             } while (cursorContactos.moveToNext());

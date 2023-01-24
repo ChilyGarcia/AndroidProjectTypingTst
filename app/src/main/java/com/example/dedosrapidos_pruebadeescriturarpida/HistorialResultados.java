@@ -31,9 +31,12 @@ public class HistorialResultados extends AppCompatActivity {
 
         listaArrayResultadosPruebas = new ArrayList<>();
 
+        String tipoPrueba = getIntent().getStringExtra("tipoPrueba");
+        Toast.makeText(this, "La prueba es: " + tipoPrueba, Toast.LENGTH_SHORT).show();
+
 
         //Se le envia al adaptador
-        ListaContactosAdapter adapter = new ListaContactosAdapter(dbResultados.mostrarContactos());
+        ListaContactosAdapter adapter = new ListaContactosAdapter(dbResultados.mostrarContactos(), tipoPrueba);
 
         listaResultados.setAdapter(adapter);
 

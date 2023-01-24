@@ -24,11 +24,10 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/textView25"
+                android:id="@+id/tvPrueba"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="Correctas: " />
+                android:layout_weight="1" />
 
             <TextView
                 android:id="@+id/tvCorrectas"
@@ -47,10 +46,10 @@
 
             <TextView
                 android:id="@+id/textView26"
-                android:layout_width="wrap_content"
+                android:layout_width="74dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Incorrectas: " />
+                android:text="@string/Incorrectas" />
 
             <TextView
                 android:id="@+id/tvIncorrectas"

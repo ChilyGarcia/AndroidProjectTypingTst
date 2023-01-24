@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 public class ResultadosDetalles extends AppCompatActivity {
 
-    TextView tvDetallesCorrectas, tvDetallesIncorrectas, tvDetallesPrecision, tvDetalleWpm;
+    TextView tvDetallesCorrectas, tvDetallesIncorrectas, tvDetallesPrecision, tvDetalleWpm, detalleWpmCpm;
     Button btnHome;
 
 
@@ -24,6 +24,7 @@ public class ResultadosDetalles extends AppCompatActivity {
         tvDetallesIncorrectas = (TextView) findViewById(R.id.tvDetallesIncorrectas);
         tvDetallesPrecision = (TextView) findViewById(R.id.tvDetallesPrecision);
         tvDetalleWpm = (TextView) findViewById(R.id.tvDetalleWpm);
+        detalleWpmCpm = (TextView) findViewById(R.id.detalleWpmCpm);
 
         btnHome = findViewById(R.id.btnHome);
 
@@ -40,11 +41,13 @@ public class ResultadosDetalles extends AppCompatActivity {
         String incorrectas = getIntent().getStringExtra("incorrectas");
         String precision = getIntent().getStringExtra("precision");
         String wpm = getIntent().getStringExtra("wpmcpm");
+        String tipoPrueba = getIntent().getStringExtra("tipoPrueba");
 
         tvDetallesCorrectas.setText(correctas);
         tvDetallesIncorrectas.setText(incorrectas);
         tvDetallesPrecision.setText(precision);
         tvDetalleWpm.setText(wpm);
+        detalleWpmCpm.setText(tipoPrueba);
 
     }
 

@@ -166,6 +166,7 @@ public class PorPalabras extends AppCompatActivity {
         intent.putExtra("incorrectos", tvPalabrasIncorrectas.getText().toString());
         intent.putExtra("presicion", tvPresicion.getText().toString());
         intent.putExtra("wpmcpm", tvWPM.getText().toString());
+        intent.putExtra("tipoPrueba", "WPM");
 
         startActivity(intent);
 

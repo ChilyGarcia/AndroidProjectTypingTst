@@ -19,7 +19,7 @@ import java.util.ArrayList;
 
 public class Resultados extends AppCompatActivity
 {
-    private TextView tvCorrectos, tvIncorrectos, tvPresicion, tvWPMCPM;
+    private TextView tvCorrectos, tvIncorrectos, tvPresicion, tvWPMCPM, tvTipoPrueba;
     private Button btnGuardar;
 
     @Override
@@ -32,6 +32,7 @@ public class Resultados extends AppCompatActivity
         tvIncorrectos = (TextView) findViewById(R.id.infoIncorrectas);
         tvPresicion = (TextView) findViewById(R.id.infoPresicion);
         tvWPMCPM = (TextView) findViewById(R.id.infoWpm);
+        tvTipoPrueba = (TextView) findViewById(R.id.textViewTipoPrueba);
 
         btnGuardar = (Button) findViewById(R.id.btnGuardar);
 
@@ -46,9 +47,10 @@ public class Resultados extends AppCompatActivity
                 String incorrectos = tvIncorrectos.getText().toString();
                 String presicion = tvPresicion.getText().toString();
                 String wpmcpm = tvWPMCPM.getText().toString();
+                String tipoPrueba = getIntent().getStringExtra("tipoPrueba");
 
                 dbResultados db = new dbResultados(Resultados.this);
-                db.Registrar(correctos, incorrectos, presicion, wpmcpm);
+                db.Registrar(correctos, incorrectos, presicion, wpmcpm, tipoPrueba);
 
                 activivtyHistorial();
 
@@ -61,11 +63,13 @@ public class Resultados extends AppCompatActivity
         String incorrectos = getIntent().getStringExtra("incorrectos");
         String presicion = getIntent().getStringExtra("presicion");
         String cpm = getIntent().getStringExtra("wpmcpm");
+        String tipoPrueba = getIntent().getStringExtra("tipoPrueba");
 
         tvCorrectos.setText(correctos);
         tvIncorrectos.setText(incorrectos);
         tvPresicion.setText(presicion);
         tvWPMCPM.setText(cpm);
+        tvTipoPrueba.setText(tipoPrueba);
 
     }
 
@@ -80,6 +84,7 @@ public class Resultados extends AppCompatActivity
     public void activivtyHistorial()
     {
         Intent historial = new Intent(this, HistorialResultados.class);
+        historial.putExtra("tipoPrueba", tvTipoPrueba.getText().toString());
         startActivity(historial);
 
 

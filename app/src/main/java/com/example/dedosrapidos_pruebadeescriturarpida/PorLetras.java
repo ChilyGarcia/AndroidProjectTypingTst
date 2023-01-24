@@ -191,6 +191,9 @@ public class PorLetras extends AppCompatActivity {
         resultados.putExtra("incorrectos", tvIncorrectos.getText().toString());
         resultados.putExtra("presicion", tvPresicion.getText().toString());
         resultados.putExtra("wpmcpm", tvCPM.getText().toString());
+        resultados.putExtra("tipoPrueba", "CPM");
+
+
         startActivity(resultados);
     }
 }

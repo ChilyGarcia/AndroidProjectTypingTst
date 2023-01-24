@@ -113,7 +113,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textViewIncorrectas" />
 
     <TextView
-        android:id="@+id/textViewWPMCPM"
+        android:id="@+id/textViewTipoPrueba"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"

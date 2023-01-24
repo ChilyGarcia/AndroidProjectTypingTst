@@ -7,18 +7,28 @@ public class ResultadosPruebas
     public String incorrectos;
     public String precision;
     public String wpmcpm;
+    public String tipoPrueba;
 
     public ResultadosPruebas()
     {
 
     }
-    public ResultadosPruebas(int id, String correctos, String incorrectos, String precision, String wpmcpm) {
+    public ResultadosPruebas(int id, String correctos, String incorrectos, String precision, String wpmcpm, String tipoPrueba) {
         this.id = id;
         this.correctos = correctos;
         this.incorrectos = incorrectos;
         this.precision = precision;
         this.wpmcpm = wpmcpm;
+        this.tipoPrueba = tipoPrueba;
 
+    }
+
+    public String getTipoPrueba() {
+        return tipoPrueba;
+    }
+
+    public void setTipoPrueba(String tipoPrueba) {
+        this.tipoPrueba = tipoPrueba;
     }
 
     public int getId() {
