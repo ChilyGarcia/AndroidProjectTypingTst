@@ -7,4 +7,7 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="red">#FF4B3A</color>
+
+    <color name="_bg__home_ek2_color">#FFFFFF</color>
 </resources>

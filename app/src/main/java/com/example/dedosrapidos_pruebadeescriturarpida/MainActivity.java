@@ -27,8 +27,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView tv;
     private EditText et;
 
-    Button btnHistorial;
-
+        Button btnLetras, btnPalabras, btnHistorial;
 
 
 
@@ -37,22 +36,50 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        btnLetras = (Button) findViewById(R.id.btnLetras);
+        btnPalabras = (Button) findViewById(R.id.btnPalabras);
+        btnHistorial = (Button) findViewById(R.id.btnHistorial);
+
+        btnLetras.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                porLetras();
+
+            }
+        });
+
+        btnPalabras.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                porPalabras();
+            }
+        });
+
+        btnHistorial.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                historial();
+            }
+        });
+
+
 
      }
 
      //Metodo para pasar de un activity a otro
-    public void eventoSiguiente(View view)
+    public void porLetras()
     {
         Intent siguiente = new Intent(this, PorLetras.class);
         startActivity(siguiente);
     }
-    public void porPalabras(View view)
+    public void porPalabras()
     {
         Intent palabras = new Intent(this, PorPalabras.class);
         startActivity(palabras);
     }
 
-    public void historial(View view)
+    public void historial()
     {
         Intent historial = new Intent(this, HistorialResultados.class);
         startActivity(historial);
