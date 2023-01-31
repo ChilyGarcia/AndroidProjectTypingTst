@@ -7,7 +7,9 @@
     android:background="@drawable/fondo_de_pantalla_para_tel_fono_mariposa_minimalista_blanco_2"
     tools:context=".MainActivity">
 
+
     <LinearLayout
+
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">

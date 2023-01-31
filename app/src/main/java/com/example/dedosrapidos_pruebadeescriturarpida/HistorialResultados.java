@@ -38,6 +38,9 @@ public class HistorialResultados extends AppCompatActivity {
 
         listaResultados.setAdapter(adapter);
 
+        //Con esto quitamos el actionBar del Activity
+        getSupportActionBar().hide();
+
 
     }
 }

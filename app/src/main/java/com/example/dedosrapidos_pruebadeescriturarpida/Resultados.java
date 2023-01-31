@@ -71,6 +71,8 @@ public class Resultados extends AppCompatActivity
         tvWPMCPM.setText(cpm);
         tvTipoPrueba.setText(tipoPrueba);
 
+        getSupportActionBar().hide();
+
     }
 
     //Llevar a inicio

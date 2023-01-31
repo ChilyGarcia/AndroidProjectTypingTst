@@ -49,6 +49,8 @@ public class ResultadosDetalles extends AppCompatActivity {
         tvDetalleWpm.setText(wpm);
         detalleWpmCpm.setText(tipoPrueba);
 
+        getSupportActionBar().hide();
+
     }
 
     public void Home()

@@ -139,6 +139,9 @@ public class PorLetras extends AppCompatActivity {
 
             }
         });
+
+        //Con esto quitamos el actionBar de nuestra activity
+        getSupportActionBar().hide();
     }
 
     //Metodo para iniciar el contador del temporizador

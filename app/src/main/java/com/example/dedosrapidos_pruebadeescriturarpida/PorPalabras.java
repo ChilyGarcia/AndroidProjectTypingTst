@@ -113,6 +113,8 @@ public class PorPalabras extends AppCompatActivity {
             }
         });
 
+        getSupportActionBar().hide();
+
     }
     //Metodo para iniciar el contador del temporizador
     private void startTimer()

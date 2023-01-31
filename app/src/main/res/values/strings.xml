@@ -16,6 +16,9 @@
     <string name="guardarMarca">Guardar marca</string>
     <string name="Inicio">Inicio</string>
     <string name="cronometro">01:00</string>
+    <string name="Rate">Calificar app</string>
+    <string name="Item2">Item 2</string>
+    <string name="Item3">Item 3</string>
 
 
 </resources>

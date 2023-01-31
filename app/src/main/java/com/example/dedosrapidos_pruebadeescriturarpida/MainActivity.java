@@ -1,33 +1,23 @@
 package com.example.dedosrapidos_pruebadeescriturarpida;
 
-import androidx.annotation.ColorInt;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
-import android.graphics.Color;
-import android.nfc.Tag;
+import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.text.method.KeyListener;
-import android.util.Log;
-import android.view.KeyEvent;
-import android.view.MotionEvent;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.regex.Pattern;
-
 public class MainActivity extends AppCompatActivity {
 
     private TextView tv;
     private EditText et;
-
-        Button btnLetras, btnPalabras, btnHistorial;
+    Button btnLetras, btnPalabras, btnHistorial;
+    private String url = "https://play.google.com/store/apps/details?id=me.pou.app&hl=es_419&gl=US";
 
 
 
@@ -39,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
         btnLetras = (Button) findViewById(R.id.btnLetras);
         btnPalabras = (Button) findViewById(R.id.btnPalabras);
         btnHistorial = (Button) findViewById(R.id.btnHistorial);
+
+
 
         btnLetras.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,7 +57,48 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
+
+
+
      }
+
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
+        getMenuInflater().inflate(R.menu.overflow, menu);
+        //Cada quee se presione la tecla del menu se abrira correctamente
+        return true;
+    }
+
+    //Metodo para agregar acciones a las opciones del menuItem
+    //El nombre de este metodo tiene que ser el mismo para que funcione la aplicacion
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        //Parar recuperar que opcion del menu ha sido seleccionada
+        int id = item.getItemId();
+
+        if(id == R.id.item1)
+        {
+            Uri link = Uri.parse(url);
+            Intent intent = new Intent(Intent.ACTION_VIEW, link);
+            startActivity(intent);
+
+
+        }
+        else if (id == R.id.item2)
+        {
+            Toast.makeText(this, "Se ha seleccionado el item numero 2", Toast.LENGTH_SHORT).show();
+
+        }
+        else if(id == R.id.item3)
+        {
+            Toast.makeText(this, "Se ha seleccionado el item numero 3", Toast.LENGTH_SHORT).show();
+
+        }
+
+        return super.onOptionsItemSelected(item);
+
+    }
 
      //Metodo para pasar de un activity a otro
     public void porLetras()
