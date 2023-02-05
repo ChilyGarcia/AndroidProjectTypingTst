@@ -67,14 +67,10 @@ public class ListaContactosAdapter extends RecyclerView.Adapter<ListaContactosAd
                 intent.putExtra("wpmcpm", wpmcmp);
                 intent.putExtra("tipoPrueba", tipoPrueba);
 
-
                 holder.itemView.getContext().startActivity(intent);
 
             }
         });
-
-
-
     }
 
     @Override

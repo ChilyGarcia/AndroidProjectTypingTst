@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.DecimalFormat;
 import java.util.Locale;
 
 public class PorPalabras extends AppCompatActivity {
@@ -142,7 +143,6 @@ public class PorPalabras extends AppCompatActivity {
 
                             Toast.makeText(PorPalabras.this, "Es correcto", Toast.LENGTH_SHORT).show();
                             correctos++;
-
                             String correctosParseo = String.valueOf(correctos);
                             tvPalabrasCorrectas.setText(correctosParseo);
                             tv.setTextSize(24);
@@ -166,10 +166,12 @@ public class PorPalabras extends AppCompatActivity {
                         String mostrarWPM = String.valueOf(calculoWPM);
                         tvWPM.setText(mostrarWPM);
 
+
+                        DecimalFormat df = new DecimalFormat("#.00");
                         float dividido = contador /100f;
-                        float contadorFloat = contador;
                         float porcentaje = correctos / dividido;
-                        String contadorFloatParse = String.valueOf(porcentaje);
+                        String contadorFloatParse = String.valueOf(df.format(porcentaje));
+
                         tvPresicion.setText(contadorFloatParse);
                     }
                 }
@@ -195,13 +197,10 @@ public class PorPalabras extends AppCompatActivity {
                 updateCountDownText();
 
             }
-
             @Override
             public void onFinish() {
                 mTimerRunning = false;
                 Resultados();
-
-
 
             }
         }.start();
@@ -221,7 +220,7 @@ public class PorPalabras extends AppCompatActivity {
 
     public void alimentar() {
         String lista[] = {"de ", "la ", "sobre ", "este ", "ya ", "cuando ", "como ", "los ", "las ", "abierto ", "cerrado ",
-                "parece ", "haber ", "bajo ", "nuestra ", "nuestro ", "nuestros ", "posible ", "tarde ", "importante ", "sentido",
+                "parece ", "haber ", "bajo ", "nuestra ", "nuestro ", "nuestros ", "posible ", "tarde ", "importante ", "sentido ",
                 "guerra ", "cambio ", "mano ", "estar ", "padre ", "gente ", "final ", "incluso ", "madre ", "padre ", "mis "
         };
         int numero = (int) (Math.random() * 32);

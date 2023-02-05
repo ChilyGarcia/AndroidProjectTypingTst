@@ -1,99 +1,148 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondo_test"
     tools:context=".ResultadosDetalles">
 
-    <TextView
-        android:id="@+id/detalleCorrectas"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="140dp"
-        android:text="@string/correctas"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/tvDetallesCorrectas"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="140dp"
-        android:text="TextView"
-        app:layout_constraintStart_toEndOf="@+id/detalleCorrectas"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="60"
+            android:text="-" />
 
-    <TextView
-        android:id="@+id/detallesIncorrectas"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="50dp"
-        android:text="@string/Incorrectas"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/detalleCorrectas" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:layout_weight="60"
+            android:background="@drawable/caja_roja">
 
-    <TextView
-        android:id="@+id/tvDetallesIncorrectas"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="72dp"
-        android:layout_marginTop="50dp"
-        android:text="TextView"
-        app:layout_constraintStart_toEndOf="@+id/detallesIncorrectas"
-        app:layout_constraintTop_toBottomOf="@+id/tvDetallesCorrectas" />
+            <TextView
+                android:id="@+id/tvDetalleWpm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                android:layout_marginEnd="52dp"
+                android:fontFamily="@font/nunito_black"
+                android:text="TextView"
+                android:textColor="@color/_bg__home_ek2_color"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvDetallesPrecision" />
 
-    <TextView
-        android:id="@+id/detallerPrecision"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="50dp"
-        android:text="@string/Precision"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/detallesIncorrectas" />
+            <TextView
+                android:id="@+id/detalleWpmCpm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="88dp"
+                android:layout_marginTop="50dp"
+                android:fontFamily="@font/nunito_black"
+                android:text="@string/CPM"
+                android:textColor="@color/_bg__home_ek2_color"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/detallerPrecision" />
 
-    <TextView
-        android:id="@+id/tvDetallesPrecision"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="85dp"
-        android:layout_marginTop="50dp"
-        android:text="TextView"
-        app:layout_constraintStart_toEndOf="@+id/detallerPrecision"
-        app:layout_constraintTop_toBottomOf="@+id/tvDetallesIncorrectas" />
+            <TextView
+                android:id="@+id/tvDetallesPrecision"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                android:layout_marginEnd="52dp"
+                android:fontFamily="@font/nunito_black"
+                android:text="TextView"
+                android:textColor="@color/_bg__home_ek2_color"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvDetallesIncorrectas" />
 
-    <TextView
-        android:id="@+id/detalleWpmCpm"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="50dp"
-        android:text="@string/CPM"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/detallerPrecision" />
+            <TextView
+                android:id="@+id/detallerPrecision"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="87dp"
+                android:layout_marginTop="44dp"
+                android:fontFamily="@font/nunito_black"
+                android:text="@string/Precision"
+                android:textColor="@color/_bg__home_ek2_color"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/detallesIncorrectas" />
 
-    <TextView
-        android:id="@+id/tvDetalleWpm"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="112dp"
-        android:layout_marginTop="48dp"
-        android:text="TextView"
-        app:layout_constraintStart_toEndOf="@+id/detalleWpmCpm"
-        app:layout_constraintTop_toBottomOf="@+id/tvDetallesPrecision" />
+            <TextView
+                android:id="@+id/tvDetallesIncorrectas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
+                android:layout_marginEnd="52dp"
+                android:fontFamily="@font/nunito_black"
+                android:text="TextView"
+                android:textColor="@color/_bg__home_ek2_color"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvDetallesCorrectas" />
 
-    <Button
-        android:id="@+id/btnHome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="156dp"
-        android:layout_marginTop="508dp"
-        android:text="@string/Inicio"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/detallesIncorrectas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="87dp"
+                android:layout_marginTop="54dp"
+                android:fontFamily="@font/nunito_black"
+                android:text="@string/Incorrectas"
+                android:textColor="@color/_bg__home_ek2_color"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/detalleCorrectas" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/tvDetallesCorrectas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="80dp"
+                android:layout_marginEnd="52dp"
+                android:fontFamily="@font/nunito_black"
+                android:text="TextView"
+                android:textColor="@color/_bg__home_ek2_color"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/detalleCorrectas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="84dp"
+                android:layout_marginTop="80dp"
+                android:fontFamily="@font/nunito_black"
+                android:text="@string/correctas"
+                android:textColor="@color/_bg__home_ek2_color"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/btnHome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="172dp"
+                android:layout_marginEnd="151dp"
+                android:layout_marginBottom="16dp"
+                android:text="@string/Inicio"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
