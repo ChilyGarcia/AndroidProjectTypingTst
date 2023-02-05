@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/tvListaPalabrasCorrectas"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondo_test"
     tools:context=".PorPalabras">
 
     <TableLayout
         android:id="@+id/tableLayout"
-        android:layout_width="408dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="56dp"
+        android:layout_width="match_parent"
+        android:layout_height="78dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="122dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -24,36 +26,45 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@color/purple_500"
+                android:background="@color/red"
+                android:fontFamily="@font/nunito_black"
                 android:text="@string/correctas"
-                android:textColor="@color/design_default_color_background" />
+                android:textColor="@color/design_default_color_background"
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/textView10"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@color/purple_500"
+                android:background="@color/red"
+                android:fontFamily="@font/nunito_black"
+                android:includeFontPadding="true"
                 android:text="@string/Incorrectas"
-                android:textColor="@color/design_default_color_background" />
+                android:textColor="@color/design_default_color_background"
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/textView9"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@color/purple_500"
+                android:background="@color/red"
+                android:fontFamily="@font/nunito_black"
                 android:text="@string/Precision"
-                android:textColor="@color/design_default_color_background" />
+                android:textColor="@color/design_default_color_background"
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/txtVisualizar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@color/purple_500"
+                android:background="@color/red"
+                android:fontFamily="@font/nunito_black"
                 android:text="@string/WPM"
-                android:textColor="@color/design_default_color_background" />
+                android:textColor="@color/design_default_color_background"
+                android:textSize="16sp" />
         </TableRow>
 
         <TableRow
@@ -65,28 +76,36 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/cero" />
+                android:fontFamily="@font/nunito_black"
+                android:text="@string/cero"
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/incorrectos"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/cero" />
+                android:fontFamily="@font/nunito_black"
+                android:text="@string/cero"
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/presicion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/cero" />
+                android:fontFamily="@font/nunito_black"
+                android:text="@string/cero"
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/wpm"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/cero" />
+                android:fontFamily="@font/nunito_black"
+                android:text="@string/cero"
+                android:textSize="16sp" />
         </TableRow>
 
         <TableRow
@@ -96,26 +115,37 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
+
     </TableLayout>
 
     <TextView
         android:id="@+id/tvPalabra"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="168dp"
-        android:layout_marginTop="300dp"
+        android:layout_width="157dp"
+        android:layout_height="73dp"
+        android:layout_below="@+id/tableLayout"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="158dp"
+        android:layout_marginTop="96dp"
+        android:layout_marginEnd="96dp"
+        android:fontFamily="@font/nunito_black"
         android:text="Iniciar "
-        android:textSize="24sp"
+        android:textSize="34sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/campoPalabraEsccribir"
-        android:layout_width="wrap_content"
+        android:layout_width="280dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="72dp"
-        android:layout_marginTop="44dp"
+        android:layout_below="@+id/tvPalabra"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="69dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="62dp"
         android:ems="10"
+        android:fontFamily="@font/nunito_black"
         android:hint="@string/EscribeLaLetra"
         android:inputType="textPersonName"
         android:textSize="24sp"
@@ -123,24 +153,19 @@
         app:layout_constraintTop_toBottomOf="@+id/tvPalabra" />
 
     <TextView
-        android:id="@+id/tvLista"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="28dp"
-        android:text="@string/espacio"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
-
-    <TextView
         android:id="@+id/tvInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="160dp"
-        android:layout_marginTop="8dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="147dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="135dp"
+        android:fontFamily="@font/nunito_black"
         android:text="@string/cronometro"
-        android:textSize="34sp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="48sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

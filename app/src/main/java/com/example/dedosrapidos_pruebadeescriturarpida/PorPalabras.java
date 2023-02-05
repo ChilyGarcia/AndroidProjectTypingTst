@@ -3,10 +3,12 @@ package com.example.dedosrapidos_pruebadeescriturarpida;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,7 +21,6 @@ public class PorPalabras extends AppCompatActivity {
     private CountDownTimer mCountDownTimer;
     private boolean mTimerRunning;
     private long mTimeLeftInMillis = START_TIME_IN_MILLIS;
-
     private TextView tv, tvPalabrasCorrectas, tvPalabrasIncorrectas, tvPresicion, tvWPM, tvLista, tvInfo;
     private EditText et;
     private int correctos = 0;
@@ -37,16 +38,18 @@ public class PorPalabras extends AppCompatActivity {
         tvPalabrasIncorrectas = (TextView) findViewById(R.id.incorrectos);
         tvPresicion = (TextView) findViewById(R.id.presicion);
         tvWPM = (TextView) findViewById(R.id.wpm);
-        tvLista = (TextView)findViewById(R.id.tvLista);
         tvInfo = (TextView) findViewById(R.id.tvInfo);
 
         et = (EditText) findViewById(R.id.campoPalabraEsccribir);
 
+
         alimentar();
+
 
         et.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
 
             }
 
@@ -56,23 +59,89 @@ public class PorPalabras extends AppCompatActivity {
                 String capture = tv.getText().toString();
                 String campo = et.getText().toString();
                 String palabra = et.getText().toString();
+                String tvInfoCronometro = tvInfo.getText().toString();
 
                 //Condocionales para cambiar el color de el textView si el usuario esta digitando bien o mal
 
 
+                if(campo.isEmpty())
+                {
+                    tv.setTextColor(Color.BLACK);
+                    tv.setTextSize(24);
+
+                }
+                else if(capture.equals(campo+" "))
+                {
+                    startTimer();
+                    tv.setTextColor(Color.GREEN);
+                    tv.setTextSize(28);
+
+                }
+                else if(!capture.equals(campo+" "))
+                {
+                    tv.setTextColor(Color.RED);
+                    tv.setTextSize(28);
+                }
+                else
+                {
+                    tv.setTextColor(Color.RED);
+                    tv.setTextSize(28);
+                }
+
+
+
+
+
+                /*
+
+                int contadorPalabrasTv =0;
+
+                if(campo.isEmpty())
+                {
+                    tv.setTextColor(Color.BLACK);
+                    tv.setTextSize(24);
+
+                }
+
+
+                for(int x = 0; x<campo.length();x++)
+                {
+                    //String letra = String.valueOf(campo.charAt(x));
+
+                    if(campo.charAt(x) == capture.charAt(contadorPalabrasTv))
+                    {
+                        startTimer();
+                        tv.setTextColor(Color.GREEN);
+                        tv.setTextSize(28);
+                        contadorPalabrasTv++;
+                    }
+                    else
+                    {
+                        tv.setTextColor(Color.RED);
+                        tv.setTextSize(28);
+
+                    }
+                }
+
+                if(tvInfoCronometro.equals("00:00"))
+                {
+                    et.setText(" ");
+                }
+
+                 */
+
+
                 for(int in = 0; in < palabra.length(); in++) {
+
 
                     if (Character.isSpace(et.getText().toString().charAt(in))) {
                         contador++;
-
                         //Se valida que lo que esté dentro del editText corresponda a lo que esta en el textView
                         if(campo.equals(capture))
                         {
-                            startTimer();
+
                             Toast.makeText(PorPalabras.this, "Es correcto", Toast.LENGTH_SHORT).show();
                             correctos++;
-                            String historial = tvLista.getText().toString();
-                            tvLista.setText(historial + campo);
 
                             String correctosParseo = String.valueOf(correctos);
                             tvPalabrasCorrectas.setText(correctosParseo);
@@ -132,11 +201,12 @@ public class PorPalabras extends AppCompatActivity {
                 mTimerRunning = false;
                 Resultados();
 
+
+
             }
         }.start();
 
         mTimerRunning = true;
-
 
     }
     private void updateCountDownText()
